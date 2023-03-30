@@ -1,0 +1,33 @@
+.input{
+    border: none;
+    outline: none;
+
+    width: 400px;
+    height: 60px;
+
+    padding: 0px 25px;
+
+    background: rgba(194, 198, 209, 0.54);
+    border-radius: 8px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #444444;
+}
+
+.input:focus{
+    border: 2px solid #2e6bc793;
+}
+
+.input::placeholder{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: #A6A6A6;
+}

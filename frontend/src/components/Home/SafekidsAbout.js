@@ -1,4 +1,4 @@
-import Style from "../../css/safekidsabout.module.css";
+import Style from "../../css/components/safekidsabout.module.css";
 import { ReactComponent as LockIcon } from "../../static/lock_icon.svg";
 import { ReactComponent as CarfIcon } from "../../static/careful_icon.svg";
 import { ReactComponent as ControlIcon } from "../../static/control_icon.svg";

@@ -1,4 +1,4 @@
-import Style from "../../css/panel.module.css";
+import Style from "../../css/components/panel.module.css";
 import img_home from "../../static/home_img.png";
 
 const Panel = () => {

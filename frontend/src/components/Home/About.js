@@ -1,4 +1,4 @@
-import Style from "../../css/about.module.css";
+import Style from "../../css/components/about.module.css";
 import about_img from "../../static/about_img.png"
 
 

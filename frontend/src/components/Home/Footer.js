@@ -1,4 +1,4 @@
-import Style from "../../footer.module.css";
+import Style from "../../css/components/footer.module.css";
 import { ReactComponent as WhatsappIcon } from "../../static/whatsapp_icon.svg";
 import { ReactComponent as TwiterIcon } from "../../static/twiter_icon.svg";
 import { ReactComponent as InstaIcon } from "../../static/insta_icon.svg";

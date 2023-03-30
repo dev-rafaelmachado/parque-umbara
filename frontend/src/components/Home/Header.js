@@ -1,4 +1,4 @@
-import Style from "../../css/header.module.css";
+import Style from "../../css/components/header.module.css";
 import { ReactComponent as Logo } from "../../static/logo.svg";
 import { Link } from "react-router-dom";
 import { Link as Lk } from "react-scroll";
@@ -20,7 +20,7 @@ const Header = () => {
           Contato
         </Lk>
         <div className={Style.user}>
-          <Link className={Style.link} to={"/"}>
+          <Link className={Style.link} to={"/login"}>
             Log In
           </Link>
           <Link className={Style.link} to={"/"}>
