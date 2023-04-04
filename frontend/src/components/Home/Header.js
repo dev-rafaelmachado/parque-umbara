@@ -6,9 +6,7 @@ import { Link as Lk } from "react-scroll";
 const Header = () => {
   return (
     <header id="header" className={Style.header}>
-      <a href="#header">
         <Logo />
-      </a>
       <div className={Style.nav}>
         <Lk className={Style.link_pg} to="about" smooth={true} duration={500}>
           Sobre
@@ -23,7 +21,7 @@ const Header = () => {
           <Link className={Style.link} to={"/login"}>
             Log In
           </Link>
-          <Link className={Style.link} to={"/"}>
+          <Link className={Style.link} to={"/sign"}>
             Sign Up
           </Link>
         </div>

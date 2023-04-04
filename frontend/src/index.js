@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from './App';
-import Login from './pages/Login';
+import App from "./App";
+import Login from "./pages/Login";
+import Sign from "./pages/Sign";
+import Safekids from "./pages/Safekids";
+import Manager from "./pages/Manager";
 
-import './index.css';
-
+import "./index.css";
 
 function Index() {
   return (
@@ -21,12 +23,24 @@ function Index() {
           path: "/login",
           element: <Login />,
         },
+        {
+          path: "/sign",
+          element: <Sign />,
+        },
+        {
+          path: "/safekids",
+          element: <Safekids />,
+        },
+        {
+          path: "/manager",
+          element: <Manager />,
+        },
       ])}
     ></RouterProvider>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Index />

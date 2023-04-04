@@ -3,7 +3,14 @@ import Input from "../components/Form/Input";
 
 import Style from "../css/pages/login.module.css";
 import LoginImage from "../static/login_image.png";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate("/safekids")
+  };
+
   return (
     <main className={Style.login}>
       <div className={Style.esq}>
@@ -12,7 +19,7 @@ const Login = () => {
           <Input type={"email"} placehoader={"E-mail"} />
           <Input type={"password"} placehoader={"Senha"} />
         </form>
-        <Button text={"Entrar"} />
+        <Button onClick={handleClick} text={"Entrar"} />
         <div className={Style.links}>
           <a href="/">Esqueci minha senha</a>
           <a href="/sign">Não possui conta? Registre-se</a>

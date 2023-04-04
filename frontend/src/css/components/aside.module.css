@@ -1,0 +1,101 @@
+.aside{
+    width: 280px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #333333;
+
+    padding: 30px 50px;
+    gap: 50px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header h1{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.link h3{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #9A9A9A;
+    margin-bottom: 1px;
+    transition: 0.3s;
+}
+
+.icon, .icon path{
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+.link:hover .icon path{
+    fill: #ffffffd3;
+}
+
+.link:hover h3{
+    color: #ffffffe1;
+}
+
+.makeBlue h3, .makeBlue path{
+    fill: #819DD3;
+    color: #819DD3;
+}
+
+.exit{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    position: absolute;
+    bottom: 30;
+}
+
+.exit h3{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    color: #FF6767;
+}
+
+.exit:hover{
+    transform: scale(1.05);
+}
