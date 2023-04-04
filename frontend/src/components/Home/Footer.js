@@ -9,16 +9,16 @@ const Footer = () => {
     <footer id="contato" className={Style.footer}>
       <p>Copyright 2023</p>
       <div className={Style.social}>
-        <a href="">
+        <a href="/">
           <WhatsappIcon className={Style.icon} />{" "}
         </a>
-        <a href="">
+        <a href="/">
           <TwiterIcon className={Style.tt} />
         </a>
-        <a href="">
+        <a href="/">
           <InstaIcon className={Style.icon} />
         </a>
-        <a href="">
+        <a href="/">
           <FaceIcon className={Style.icon} />
         </a>
       </div>
