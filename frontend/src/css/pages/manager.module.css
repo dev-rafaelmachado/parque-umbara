@@ -106,3 +106,10 @@ tbody tr:nth-child(even) {
     transform: scale(0.5);
 }
 
+@media (max-width: 1200px) {
+    .service{
+        margin-top: 10%;
+        padding: 40px 20px;
+    }
+}
+

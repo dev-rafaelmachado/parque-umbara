@@ -1,7 +1,7 @@
 .header{
     width: 100%;
-    height: 100px;
-    padding: 0px 25px;
+    height: 6.2rem;
+    padding: 0px 1.5rem;
 
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
 .nav{
     width: 50%;
     height: 100%;
-    padding: 20px 0px;
+    padding: 1.2rem 0px;
 
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
 
-    background: rgba(66, 106, 227, 0.54);
+    background: #426ae38a;
     border-radius: 8px;
 }
 
@@ -80,4 +80,27 @@
 .link_pg:hover,
 .link:first-child:hover{
     color: #3e59f1;
+}
+
+@media (max-width: 1200px) {
+    .nav{
+        display:none;
+    }
+    .link_pg{
+        display:none;
+    }
+    .user{
+        display:none;
+    }
+    .link{
+        display:none;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo{
+        transform: scale(0.7);
+    }
 }

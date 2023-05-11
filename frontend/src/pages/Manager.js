@@ -57,6 +57,9 @@ const Manager = () => {
     <main className={Style.manager}>
       <Aside stateLink="manager" />
       <section className={Style.service}>
+        <div className={Style.btn}>
+          <button className={Style.button}>Cadastrar manualmente</button>
+        </div>
         <div className={Style.box}>
           <h1>Lista de usuários</h1>
           <table className={Style.table}>
@@ -80,7 +83,6 @@ const Manager = () => {
             </tbody>
           </table>
         </div>
-        <div className={Style.btn}><button className={Style.button}>Cadastrar manualmente</button></div>
       </section>
     </main>
   );

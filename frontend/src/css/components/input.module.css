@@ -2,10 +2,10 @@
     border: none;
     outline: none;
 
-    width: 400px;
-    height: 60px;
+    width: 420px;
+    height: 5rem;
 
-    padding: 0px 25px;
+    padding: 0px 1.8rem;
 
     background: rgba(194, 198, 209, 0.54);
     border-radius: 8px;
@@ -13,8 +13,7 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 1.6rem;
     color: #444444;
 }
 
@@ -26,8 +25,15 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 1.6 rem;
 
     color: #A6A6A6;
+}
+
+
+@media (max-width: 1200px) {
+    .input{
+        width: 80%;
+        height: 6.2rem;
+    }
 }
