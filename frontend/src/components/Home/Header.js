@@ -1,12 +1,16 @@
 import Style from "../../css/components/header.module.css";
+
 import { ReactComponent as Logo } from "../../static/logo.svg";
+import MobileMenu from "./MobileMenu";
+
 import { Link } from "react-router-dom";
 import { Link as Lk } from "react-scroll";
 
 const Header = () => {
+
   return (
     <header id="header" className={Style.header}>
-        <Logo />
+      <Logo className={Style.logo}/>
       <div className={Style.nav}>
         <Lk className={Style.link_pg} to="about" smooth={true} duration={500}>
           Sobre
@@ -26,6 +30,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <MobileMenu />
     </header>
   );
 };

@@ -1,0 +1,74 @@
+.mobileMenu {
+  display:none;
+}
+
+.menuButton {
+  position: absolute;
+  top: 1.62rem;
+  right: 3%;
+  
+  animation: fade 0.5s ease-in-out;
+}
+
+.menuList{
+    z-index: 5;
+    position: absolute;
+    background-color: #99aef0;
+    padding: 1rem 1.5rem;
+
+    top: 5rem;
+    right: 3.5%;
+
+    border-radius: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.link:first-child{
+    color: #fff;
+}
+
+
+.link{
+    text-decoration: none;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #426AE3;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+  
+
+@media (max-width: 1200px) {
+    .mobileMenu {
+        display:block;
+      }
+}
+
+ @keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+  
+@keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+  

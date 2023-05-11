@@ -16,8 +16,7 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
-    line-height: 87px;
+    font-size: 4rem;
     display: flex;
     align-items: center;
     text-align: center;
@@ -28,8 +27,7 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1.6rem;
     color: #000000;
 }
 
@@ -58,18 +56,17 @@
 
     display: flex;
     align-items: center;
-    padding-left: 12px;
+    padding-left: 1.2rem;
 }
 
 .card h2{
-    margin-top: 10px;
+    margin-top: 1rem;
     height: 15%;
     width: 100%;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 49px;
+    font-size: 2.2rem;
     color: #000000;
 }
 
@@ -80,8 +77,34 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
+    font-size: 1rem;
+    color: #3a3a3a;
 
 }
+
+@media (max-width: 1200px) {
+    .sfabout{
+        width: 100%;
+        height: fit-content;
+    }
+    .cards{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .card{
+        width: 90%;
+        height: 24rem;
+        padding: 35px 15px;
+    }
+    .card p{
+        margin-top: 8px;
+        width: 85%;
+        font-size: 1.4rem;
+    }
+    .icon{
+        height: 50%;
+        width: 10rem;
+        padding-left: 0.6rem;
+        padding-bottom: 1.5rem;
+    }
+  }

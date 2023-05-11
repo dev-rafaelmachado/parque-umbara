@@ -1,19 +1,41 @@
 import { Link, useNavigate } from "react-router-dom";
 import Style from "../../css/components/aside.module.css";
+import { X, List } from "@phosphor-icons/react";
 import { ReactComponent as HamburgMenu } from "../../static/hamburguer_menu.svg";
 import { ReactComponent as CompassIcon } from "../../static/compass_icon.svg";
 import { ReactComponent as PeopleIcon } from "../../static/people_icon.svg";
 import { ReactComponent as ExitIcon } from "../../static/exit_icon.svg";
+import { useEffect, useState } from "react";
 
 const Aside = ({ stateLink }) => {
-    const navigate = useNavigate()
-    const handleExit = () =>{
-        navigate("/")
+  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const navigate = useNavigate();
+  const handleExit = () => {
+    navigate("/");
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth > 1200) {
+      setMenuIsOpen(true);
     }
-  return (
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return menuIsOpen ? (
     <div className={Style.aside}>
       <div className={Style.header}>
-        <HamburgMenu width="42px" />
+        <X
+          onClick={() => setMenuIsOpen(false)}
+          className={Style.X}
+          size={"3rem"}
+          color="#fff"
+        />
+        <HamburgMenu className={Style.hbmenu} width="3rem" />
         <h1>Serviços</h1>
       </div>
       <div className={Style.links}>
@@ -39,10 +61,17 @@ const Aside = ({ stateLink }) => {
         </Link>
       </div>
       <div onClick={handleExit} className={Style.exit}>
-          <ExitIcon className={Style.icon}/>
-          <h3>Sair</h3>
-        </div>
+        <ExitIcon className={Style.icon} />
+        <h3>Sair</h3>
+      </div>
     </div>
+  ) : (
+    <List
+      onClick={() => setMenuIsOpen(true)}
+      className={Style.menu}
+      size="3rem"
+      color="#000"
+    />
   );
 };
 
