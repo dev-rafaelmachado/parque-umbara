@@ -1,7 +1,7 @@
 import bcrypt
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from db import insertQuery, selectQuery, callProcedure
+from db import selectQuery, callProcedure
 
 app = Flask(__name__)
 CORS(app)
