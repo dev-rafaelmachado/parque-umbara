@@ -1,14 +1,17 @@
 import bcrypt
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from db import insertQuery, selectQuery, callProcedure
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/cadastro', methods=['POST'])
 def cadastro():
     try:
         dados = request.get_json()
-
+        
+        
         if selectQuery("SELECT * FROM person WHERE cpf = %s", (dados['cpf'],)) or selectQuery("SELECT * FROM person WHERE email = %s", (dados['email'],)):
             return jsonify({'error': 'Usuário já existente.'}), 400
         
@@ -29,7 +32,7 @@ def login():
         
         userData = selectQuery("SELECT senha, cpf FROM person WHERE email = %s", (dados['email'],))
         if not userData:
-            return jsonify({'error': 'Usuário inexistente.'}), 400
+            return jsonify({'error': 'Usuário inexistente.'}), 401
         
         stored_password = userData[0][0]
         
@@ -38,7 +41,7 @@ def login():
                 "cpf": userData[0][1],
             })
             
-        return jsonify({'error': 'Senha incorreta'}), 201
+        return jsonify({'error': 'Senha incorreta'}), 401
         
     except Exception as e:
         return jsonify({'error': str(e)}), 500

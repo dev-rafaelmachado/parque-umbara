@@ -46,6 +46,44 @@ border-radius: 0px 60px 60px 0px;
     color: #000000;
 }
 
+.gender{
+    width: 420px;
+    height: 4rem;
+
+    outline: none;
+
+    background: rgba(194, 198, 209, 0.54);
+    border-radius: 8px;
+
+    padding: 0px 1.8rem;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #444444;
+}
+
+.err{
+    position: absolute;
+    top: 3%;
+
+    width: fit-content;
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    background-color: #d1342d;
+
+    display: grid;
+    place-items: center;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
 @media (max-width: 1200px) {
     .esq{
         display: none;
@@ -55,5 +93,13 @@ border-radius: 0px 60px 60px 0px;
     }
     .dir form{
         width: 100%;
+    }
+    .gender{
+        width: 80%;
+        height: 6.2rem;
+    }
+
+    .err{
+        transform: scale(1.2);
     }
 }

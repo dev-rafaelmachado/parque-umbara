@@ -1,25 +1,88 @@
+import { useState } from "react";
+
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import Button from "../components/Form/Button";
 import Input from "../components/Form/Input";
 
 import Style from "../css/pages/sign.module.css";
-import SignImg from "../static/sign_image.jpg"
+import SignImg from "../static/sign_image.jpg";
 
 const Sign = () => {
+  const [nome, setNome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
+  const [dataNasc, setDataNasc] = useState("");
+  const [password, setPassword] = useState("");
+  const [cfPassword, setCfPassword] = useState("");
+
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+  const HandleRegister = () => {
+    if (!cpf || !nome || !password || !email || !gender || !dataNasc) {
+      setError("Preencha todos os campos");
+      return;
+    }
+    axios
+      .post("http://127.0.0.1:5000/cadastro", {
+        cpf,
+        nome,
+        senha: password,
+        email,
+        sexo: gender,
+        data_nasc: dataNasc,
+      })
+      .then((response) => {
+        const { data } = response;
+        navigate("/login");
+      })
+      .catch((err) => {
+        setError(err.response.data.error);
+      });
+  };
+
   return (
     <main className={Style.sign}>
       <div className={Style.esq}>
         <img src={SignImg} alt="" />
       </div>
       <div className={Style.dir}>
+        {error && <span className={Style.err}>{error}</span>}
         <h1>Bem vindo(a)!</h1>
         <form>
-          <Input type={"text"} placehoader={"Nome"} />
-          <Input type={"text"} placehoader={"CPF"} />
-          <Input type={"email"} placehoader={"E-mail"} />
-          <Input type={"password"} placehoader={"Senha"} />
-          <Input type={"password"} placehoader={"Confirmar Senha"} />
+          <Input type={"text"} placehoader={"Nome"} setState={setNome} />
+          <Input type={"text"} placehoader={"CPF"} setState={setCpf} />
+          <Input type={"email"} placehoader={"E-mail"} setState={setEmail} />
+          <select
+            className={Style.gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
+            <option>Gênero</option>
+            <option value="m">Masculino</option>
+            <option value="f">Feminino</option>
+            <option value="b">Não Binário</option>
+          </select>
+          <Input
+            type={"date"}
+            placehoader={"Data de Nascimento"}
+            setState={setDataNasc}
+          />
+          <Input
+            type={"password"}
+            placehoader={"Senha"}
+            setState={setPassword}
+          />
+          <Input
+            type={"password"}
+            placehoader={"Confirmar Senha"}
+            setState={setCfPassword}
+          />
         </form>
-        <Button text={"Registrar"} />
+        <Button onClick={HandleRegister} text={"Registrar"} />
       </div>
     </main>
   );
