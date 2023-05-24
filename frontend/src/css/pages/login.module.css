@@ -64,6 +64,26 @@
     border-radius: 60px 0px 0px 60px;
 }
 
+.err{
+    position: absolute;
+    top: 10%;
+
+    width: fit-content;
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    background-color: #d1342d;
+
+    display: grid;
+    place-items: center;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
 
 @media (max-width: 1200px) {
     .dir{
@@ -74,5 +94,8 @@
     }
     .esq form{
         width: 100%;
+    }
+    .err{
+        transform: scale(1.2);
     }
 }
