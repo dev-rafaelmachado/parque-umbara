@@ -46,5 +46,25 @@ def login():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/clients', methods=['GET'])
+def clients():
+    try:
+        raw_clients = selectQuery("Select * from person")
+        
+        clients = []
+        for client in raw_clients:
+            clients.append({
+                "cpf": client[0],
+                "nome": client[1],
+                "email": client[3],
+                "sexo": client[4],
+                "data_nasc": client[5],
+            })
+            
+        
+        return clients, 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True)
