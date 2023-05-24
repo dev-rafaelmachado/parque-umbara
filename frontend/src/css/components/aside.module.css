@@ -99,3 +99,35 @@
 .exit:hover{
     transform: scale(1.05);
 }
+
+.hbmenu{
+    display: block;
+}
+.X{
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .aside{
+        position: absolute;
+        z-index: 10;
+        width: 240px;
+    }
+    .header h1{
+        display: none;
+    }
+    .hbmenu{
+        display: none;
+    }
+    .X{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        top: 22px;
+        left: 12%;
+    }
+    
+}
+
+  

@@ -1,0 +1,139 @@
+.outModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+
+    display: grid;
+    place-items: center;
+}
+
+.modal {
+    position: relative;
+    width: 900px;
+    height: 520px;
+
+    background-color: white;
+    border-radius: 12px;
+
+    padding: 40px 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal h1 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.6rem;
+    color: #000000;
+}
+
+.modal form {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal form div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+.gender {
+    width: 420px;
+    height: 4rem;
+
+    outline: none;
+
+    background: rgba(194, 198, 209, 0.54);
+    border-radius: 8px;
+
+    padding: 0px 1.8rem;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #444444;
+}
+
+.x {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+
+    transition: 0.3s;
+}
+
+.x:hover {
+    transform: scale(1.1);
+}
+
+.x:active {
+    transform: scale(0.4);
+}
+
+.err {
+    position: absolute;
+    bottom: 3%;
+
+    width: fit-content;
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    background-color: #d1342d;
+
+    display: grid;
+    place-items: center;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+    .modal {
+        width: 80%;
+        height: max-content;
+    }
+
+    .modal h1 {
+        margin-bottom: 10px;
+    }
+
+    .modal form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal form div {
+        width: 100%;
+    }
+
+    .gender {
+        width: 80%;
+        height: 6.2rem;
+    }
+
+    .err {
+        transform: scale(1.2);
+    }
+}

@@ -10,7 +10,7 @@ const Footer = () => {
       <p>Copyright 2023</p>
       <div className={Style.social}>
         <a href="/">
-          <WhatsappIcon className={Style.icon} />{" "}
+          <WhatsappIcon className={Style.icon} />
         </a>
         <a href="/">
           <TwiterIcon className={Style.tt} />
