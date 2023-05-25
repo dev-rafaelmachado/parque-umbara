@@ -20,7 +20,6 @@ const Login = () => {
     api
       .post("/login", { email, senha: password })
       .then((response) => {
-        const { data } = response;
         navigate("/safekids");
       })
       .catch((err) => {

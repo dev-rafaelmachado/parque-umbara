@@ -18,7 +18,15 @@ const FormModal = ({ setIsModalOpen }) => {
 
   const HandleRegister = (event) => {
     event.preventDefault();
-    if (!cpf || !nome || !password || !email || !gender || !dataNasc) {
+    if (
+      !cpf ||
+      !nome ||
+      !password ||
+      !email ||
+      !gender ||
+      !dataNasc ||
+      !cfPassword
+    ) {
       setError("Preencha todos os campos");
       return;
     }
