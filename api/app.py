@@ -15,7 +15,6 @@ def cadastro():
         if selectQuery("SELECT * FROM person WHERE cpf = %s", (dados['cpf'],)) or selectQuery("SELECT * FROM person WHERE email = %s", (dados['email'],)):
             return jsonify({'error': 'Usuário já existente.'}), 400
         
-        # Hash da senha usando bcrypt
         hashed_password = bcrypt.hashpw(dados['senha'].encode('utf-8'), bcrypt.gensalt())
 
         callProcedure("cadastrar_usuario", (dados['cpf'], dados['nome'], hashed_password, dados['email'], dados['sexo'], dados['data_nasc']))
