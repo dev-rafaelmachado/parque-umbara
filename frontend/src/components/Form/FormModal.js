@@ -1,5 +1,5 @@
 import { X } from "@phosphor-icons/react";
-import api from "../utils/axios";
+import api from "../../utils/axios";
 import { useState } from "react";
 import Style from "../../css/components/formmodal.module.css";
 import Button from "./Button";
@@ -18,7 +18,15 @@ const FormModal = ({ setIsModalOpen }) => {
 
   const HandleRegister = (event) => {
     event.preventDefault();
-    if (!cpf || !nome || !password || !email || !gender || !dataNasc) {
+    if (
+      !cpf ||
+      !nome ||
+      !password ||
+      !email ||
+      !gender ||
+      !dataNasc ||
+      !cfPassword
+    ) {
       setError("Preencha todos os campos");
       return;
     }

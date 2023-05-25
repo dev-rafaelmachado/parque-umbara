@@ -33,7 +33,7 @@ A API do Parque Umbará é hospedada no Render, uma plataforma de hospedagem em 
 
 <br>
 <div class="alert" style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px;">
-    <strong>⚠️ Atenção:</strong> A API cai com muita frequencia por isso, caso for testar, sugiro que rode ela na sua máquina local, para fazer isto siga estes passos:
+    <strong>⚠️ Atenção:</strong> O serviço de hospedagem da API é MUITO lento e a API cai com muita frequencia por isso, caso for testar, sugiro que rode ela na sua máquina local, para fazer isto siga estes passos:
 </div>
 <br>
 

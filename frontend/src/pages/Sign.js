@@ -23,7 +23,15 @@ const Sign = () => {
   const navigate = useNavigate();
 
   const HandleRegister = () => {
-    if (!cpf || !nome || !password || !email || !gender || !dataNasc) {
+    if (
+      !cpf ||
+      !nome ||
+      !password ||
+      !email ||
+      !gender ||
+      !dataNasc ||
+      !cfPassword
+    ) {
       setError("Preencha todos os campos");
       return;
     }
@@ -37,7 +45,6 @@ const Sign = () => {
         data_nasc: dataNasc,
       })
       .then((response) => {
-        const { data } = response;
         navigate("/login");
       })
       .catch((err) => {
