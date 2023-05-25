@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -17,8 +17,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    axios
-      .post("http://127.0.0.1:5000/login", { email, senha: password })
+    api
+      .post("/login", { email, senha: password })
       .then((response) => {
         const { data } = response;
         navigate("/safekids");

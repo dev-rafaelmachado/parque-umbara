@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import axios from "axios";
+import api from "../utils/axios";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../components/Form/Button";
@@ -27,8 +27,8 @@ const Sign = () => {
       setError("Preencha todos os campos");
       return;
     }
-    axios
-      .post("http://127.0.0.1:5000/cadastro", {
+    api
+      .post("/cadastro", {
         cpf,
         nome,
         senha: password,
