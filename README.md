@@ -59,6 +59,9 @@ const api = axios.create({
 });
 ```
 
+- Ou utilize este link para testar o site com api em localhost:
+  - [https://silver-froyo-c9f627.netlify.app](https://silver-froyo-c9f627.netlify.app)
+
 ### Site (React)
 O site do Parque Umbará é desenvolvido usando React e está hospedado no Netlify. O site é implantado automaticamente a partir do repositório no GitHub. Ao fazer push para a branch principal, o Netlify realiza uma nova construção e implantação do site. O site pode ser acessado na seguinte URL:
 
