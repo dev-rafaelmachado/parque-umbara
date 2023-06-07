@@ -1,6 +1,7 @@
 import Aside from "../components/services/Aside";
 import Bangle from "../components/services/Bangle";
 import BangleAdd from "../components/services/BangleAdd";
+import { Map } from "../components/services/Map";
 import Style from "../css/pages/safekids.module.css";
 
 const Safekids = () => {
@@ -23,6 +24,7 @@ const Safekids = () => {
               return <Bangle key={index} id={id} />;
             })}
           </div>
+        <Map />
         </div>
       </section>
     </main>
