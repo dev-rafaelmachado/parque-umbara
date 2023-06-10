@@ -1,12 +1,16 @@
 import bcrypt
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+<<<<<<< HEAD
 from db import selectQuery, callProcedure, insertQuery
 from mqtt import Mqtt, config, topics
 from flask_socketio import SocketIO
 import json
 
 
+=======
+from db import selectQuery, callProcedure
+>>>>>>> 19d71139ca86484dc37398c179bcb766ffb3e17c
 
 app = Flask(__name__)
 # Config

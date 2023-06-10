@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import axios from "axios";
+import api from "../utils/axios";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../components/Form/Button";
@@ -23,12 +23,20 @@ const Sign = () => {
   const navigate = useNavigate();
 
   const HandleRegister = () => {
-    if (!cpf || !nome || !password || !email || !gender || !dataNasc) {
+    if (
+      !cpf ||
+      !nome ||
+      !password ||
+      !email ||
+      !gender ||
+      !dataNasc ||
+      !cfPassword
+    ) {
       setError("Preencha todos os campos");
       return;
     }
-    axios
-      .post("http://127.0.0.1:5000/cadastro", {
+    api
+      .post("/cadastro", {
         cpf,
         nome,
         senha: password,
@@ -37,7 +45,6 @@ const Sign = () => {
         data_nasc: dataNasc,
       })
       .then((response) => {
-        const { data } = response;
         navigate("/login");
       })
       .catch((err) => {
