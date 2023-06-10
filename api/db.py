@@ -2,9 +2,15 @@ import mysql.connector
 
 # ^ Conexão com o BD
 db = mysql.connector.connect(
+<<<<<<< HEAD
+    host='localhost',
+    user='root',
+    password='PUC@1234',
+=======
     host='db4free.net',
     user='devrafael',
     password='safe@kids',
+>>>>>>> 19d71139ca86484dc37398c179bcb766ffb3e17c
     database='parque_umbara'
 )
 
