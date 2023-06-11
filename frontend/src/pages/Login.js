@@ -20,6 +20,10 @@ const Login = () => {
     api
       .post("/login", { email, senha: password })
       .then((response) => {
+        localStorage.setItem(
+          "@safekids:1.0#user_cpf",
+          JSON.stringify(response.data)
+        );
         navigate("/safekids");
       })
       .catch((err) => {

@@ -1,0 +1,45 @@
+.outModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+
+    display: grid;
+    place-items: center;
+}
+
+.modal {
+    position: relative;
+    width: 900px;
+    height: 520px;
+
+    background-color: white;
+    border-radius: 12px;
+
+    padding: 50px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.x {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+
+    transition: 0.3s;
+}
+
+
+
+@media (max-width: 1200px) {
+    .modal {
+        width: 80%;
+        height: 80%;
+    }
+}

@@ -65,6 +65,10 @@
     background: #ff2626d3;
 }
 
+.red path{
+    fill: red;
+}
+
 @media (max-width: 1200px) {
     .bangle{
         flex-direction: column;
