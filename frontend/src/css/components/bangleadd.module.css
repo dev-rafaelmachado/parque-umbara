@@ -67,6 +67,27 @@
     transform: scale(0.5);
 }
 
+.err{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+
+    width: fit-content;
+    height: 30px;
+    padding: 0px 5px;
+    border-radius: 8px;
+    background-color: #d1342d;
+
+    display: grid;
+    place-items: center;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
 @media (max-width: 1200px) {
     .box{
         width: 90%;

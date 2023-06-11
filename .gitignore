@@ -1,2 +1,4 @@
 frontend/node_modules/
 api/__pycache__/db.cpython-311.pyc
+.vscode/settings.json
+api/__pycache__/mqtt.cpython-311.pyc
