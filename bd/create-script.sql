@@ -1,3 +1,4 @@
+create schema parque_umbara;
 use parque_umbara;
 
 create table person(
@@ -100,4 +101,87 @@ BEGIN
     VALUES (p_cpf);
 END //
 DELIMITER ;
+
+# ---
+
+DELIMITER //
+
+CREATE PROCEDURE insert_alert(
+    IN p_cpf_client CHAR(14),
+    IN p_id_bangle INT
+)
+BEGIN
+    DECLARE v_id_register INT;
+    DECLARE v_alert_count INT;
+
+    SET v_id_register = (
+        SELECT id
+        FROM register
+        WHERE id_bangle = p_id_bangle AND cpf_client = p_cpf_client AND data_fechado IS NULL
+    );
+
+    SET v_alert_count = (
+        SELECT COUNT(*)
+        FROM alert
+        WHERE id_register = v_id_register AND data_fechado IS NULL
+    );
+
+    IF v_alert_count > 0 THEN
+        SELECT 'Já existe um registro aberto na tabela alert.' AS message;
+    ELSEIF v_id_register IS NOT NULL THEN
+        INSERT INTO alert (id_register, data_aberto)
+        VALUES (v_id_register, NOW());
+
+        SELECT 'Registro inserido na tabela alert com sucesso.' AS message;
+    ELSE
+        SELECT 'Nenhum registro encontrado na tabela registro com os dados informados.' AS message;
+    END IF;
+END //
+
+DELIMITER ;
+
+# ---
+
+DELIMITER //
+
+CREATE PROCEDURE close_alert(
+    IN p_cpf_client CHAR(14),
+    IN p_id_bangle INT
+)
+BEGIN
+    DECLARE v_id_register INT;
+    DECLARE v_alert_count INT;
+
+    SET v_id_register = (
+        SELECT id
+        FROM register
+        WHERE id_bangle = p_id_bangle AND cpf_client = p_cpf_client AND data_fechado IS NULL
+    );
+
+    SET v_alert_count = (
+        SELECT COUNT(*)
+        FROM alert
+        WHERE id_register = v_id_register AND data_fechado IS NULL
+    );
+
+    IF v_alert_count > 0 THEN
+        UPDATE alert
+        SET data_fechado = NOW()
+        WHERE id_register = v_id_register AND data_fechado IS NULL;
+
+        SELECT 'Alerta fechado com sucesso.' AS message;
+    ELSE
+        SELECT 'Nenhum alerta aberto encontrado para os dados informados.' AS message;
+    END IF;
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
+
 
