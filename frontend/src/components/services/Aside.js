@@ -11,6 +11,7 @@ const Aside = ({ stateLink }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(true);
   const navigate = useNavigate();
   const handleExit = () => {
+    localStorage.removeItem("@safekids:1.0#user_cpf")
     navigate("/");
   };
 
